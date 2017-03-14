@@ -1,0 +1,39 @@
+<div class="alert">
+<% if flash[:alert] %>
+<p id="notice"><%= flash[:alert] %></p>
+<% end %>
+</div>
+
+<%= form_tag do %>
+<div class="panel panel-info">
+
+  <div class="panel-heading"><h4>Please Log In</h4></div>
+
+  <div class="panel-body">
+    
+  <div class="form-group">
+  <%= label_tag :name, 'Name:' %>
+  <%= text_field_tag :name, params[:name], class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= label_tag :password, 'Password:' %>
+  <%= password_field_tag :password, params[:password], class:"form-control" %>
+  </div>
+
+  </div>
+
+  <div class="panel-footer">
+    
+    <div class="text-left">
+    <%= submit_tag "Login", class:"btn btn-info" %>
+    </div>  
+    
+    <div class="text-right">
+    New to the site?
+    <button type="button" class="btn btn-success"><a href="/users/new">Sign Up</a></button>
+    </div>
+  </div>
+  </div>
+<% end %>
+
